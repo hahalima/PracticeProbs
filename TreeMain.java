@@ -13,14 +13,6 @@ public class TreeMain {
 		return second;
 	}
 	
-
-
-	
-	
-	
-	
-	
-	
 	public int size(Node node) {
 		if (node == null) return 0;
 //		int count = 0;
@@ -57,10 +49,6 @@ public class TreeMain {
 //		return node.data;
 		if (node.left == null) return node.data;
 		return minValue(node.left);
-	}
-	public int minValue(Node node) {
-		if (node.left != null) minValue(node.left);
-		return node.data;	
 	}
 	
 	public void printTree(Node node) {
@@ -141,16 +129,25 @@ public class TreeMain {
 		return true;
 	}
 	
-	public int countTrees(int numKeys) {
-		if (numKeys == 1) return 1;
-		
-	}
+//	public int countTrees(int numKeys) {
+//		if (numKeys == 1) return 1;
+//		
+//	}
 	
-	public boolean isBST(Node node) {
-		if ((node.left != null) && (node.left.data < node.data)) isBST(node.left);
-		else return false;	
-		if ((node.right != null) && (node.right.data > node.data)) isBST(node.right);
-		else return false;
-
+	public boolean isBST(Node root) {
+		if (root == null) {
+			return true;
+		}
+		if (root.data < minValue(root) || root.data > maxValue(root)) {
+			return false;
+		}
+		else {
+			return (isBST(root.left) &&	isBST(root.right));
+		}
 	}
+	//created method to remove errors
+	public int maxValue(Node root) {
+		return 1;
+	}
+
 }
