@@ -7,13 +7,10 @@ public class Arrays {
 		List<ArrayList<Integer>> A = new ArrayList<ArrayList<Integer>>();
 		ArrayList<Integer> row1 = new ArrayList<Integer>();
 		row1.add(1);
-		row1.add(2);
 		ArrayList<Integer> row2 = new ArrayList<Integer>();
-		row2.add(3);
-		row2.add(4);
+		row2.add(2);
 		ArrayList<Integer> row3 = new ArrayList<Integer>();
-		row3.add(5);
-		row3.add(6);
+		row3.add(3);
 		A.add(row1);
 		A.add(row2);
 		A.add(row3);
@@ -28,7 +25,12 @@ public class Arrays {
        int top = 0; 
        int bot = A.size()-1;
        int left = 0;
-       int right = A.size()-1;
+       int right = A.get(top).size()-1;
+       
+       if (top == bot && left == right) {
+    	   result.add(A.get(top).get(right));
+    	   return result;
+       }
        
        while (top <= bot && left <= right) {
                for (int i=left; i<= right; i++) {
