@@ -145,9 +145,14 @@ public class TreeMain {
 			return (isBST(root.left) &&	isBST(root.right));
 		}
 	}
-	//created method to remove errors
+	//created method to remove errors for isBST method
 	public int maxValue(Node root) {
 		return 1;
 	}
-
+	
+	public int isBST2(Node node) {
+		
+	}
+	
+	public int
 }
