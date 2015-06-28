@@ -4,5 +4,5 @@ def factorial (n):
 		result = result * n
 		n = n-1
 	return result  
-
-print factorial(2)
+prompt = raw_input("Enter a number that you want to get the factorial for: ")
+print factorial(int(prompt))
