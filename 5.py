@@ -1,9 +1,11 @@
 class prob5:
-	string = ""
-	def __init__ (obj) :
-		obj.string = ""
-	def getString():
-		string = raw_input()
-	def printString():
-		print string.upper()
+	def __init__ (self) :
+		self.string = ""
+	def getString(self):
+		self.string = raw_input()
+	def printString(self):
+		print self.string.upper()
 
+A = prob5()
+A.getString()
+A.printString()
