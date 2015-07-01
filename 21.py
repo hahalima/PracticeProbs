@@ -9,14 +9,14 @@ def robotSteps():
 			break
 		else:
 			input = input.split(" ")
-			if input[0] == "UP":
-				y = y + int(input[1])
-			elif input[0] == "DOWN":
-				y = y - int(input[1])
-			elif input[0] == "LEFT":
-				x = x - int(input[1])
-			elif input[0] == "RIGHT":
-				x = x + int(input[1])
+			if direction == "UP":
+				y = y + movement
+			elif direction == "DOWN":
+				y = y - movement
+			elif direction == "LEFT":
+				x = x - movement
+			elif direction == "RIGHT":
+				x = x + movement
 	result = math.sqrt(x*x+y*y)
 	return round(int(result))
 
@@ -28,15 +28,18 @@ def robotStepsv2():
 			break
 		else:
 			input = input.split(" ")
-			if input[0] == "UP":
-				position[1] = position[1] + int(input[1])
-				print position[1]
-			elif input[0] == "DOWN":
-				position[1] = position[1] - int(input[1])
-			elif input[0] == "LEFT":
-				position[0] = position[0] - int(input[1])
-			elif input[0] == "RIGHT":	
-				position[0] = position[0] + int(input[1])
+			direction = input[0]
+			movement = int(input[1])
+			if direction == "UP":
+				position[1] = position[1] + movement
+			elif direction == "DOWN":
+				position[1] = position[1] - movement
+			elif direction == "LEFT":
+				position[0] = position[0] - movement
+			elif direction == "RIGHT":	
+				position[0] = position[0] + movement
+			else:
+				pass
 	return int(round((math.sqrt(position[0]**2 + position[1]**2))))
 
 
